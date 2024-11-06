@@ -1,25 +1,25 @@
-pirPin=2;
-ledPin=13;
-buzzerPin=12;
+pirPin = 2;
+ledPin = 13;
+buzzerPin = 12;
 
-void setup(){
-          pinMode(pirPin,INPUT);
-          pinMode(ledPin,OUTPUT);
-          pinMode(buzzerPin,OUTPUT);
-          Serial.begin(9600);
+void setup() {
+    pinMode(pirPin, INPUT);
+    pinMode(ledPin, OUTPUT);
+    pinMode(buzzerPin, OUTPUT);
+    Serial.begin(9600);
 }
 
-void loop(){
-          int pinstate=digitalRead(pirPin);
-          if (pirstate==HIGH){
-                  digitalWrite(ledPin,HIGH);
-                   digitalWrite(buzzerPin,HIGH);
-                  Serial.print("Detected the Motion");
-          }
-          else{
-              digitalWrite(ledPin,LOW);
-              digitalWrite(buzzerPin,LOW);
-              Serial.print("No Motion");
-          }
-          delay(1000);
+void loop() {
+    int pinstate = digitalRead(pirPin);
+    if (pinstate == HIGH) {
+        digitalWrite(ledPin, HIGH);
+        digitalWrite(buzzerPin, HIGH);
+        Serial.print("Motion MOTION");
+    }
+    else {
+        digitalWrite(ledPin, LOW);
+        digitalWrite(buzzerPin, LOW);
+        Serial.print("No Motion");
+    }
+    delay(1000);
 }
